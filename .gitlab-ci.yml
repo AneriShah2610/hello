@@ -1,0 +1,21 @@
+stages:
+#  - setup
+  - docker_build_and_push
+
+#setup:
+#  stage: setup
+#  image: golang:1.15.6-alpine3.12
+#  artifacts:
+#    paths:
+#      - vendor/
+#  script:
+#    - go mod vendor
+
+docker_build_and_push:
+  stage: docker_build_and_push
+  image: golang:1.15.6-alpine3.12
+  script:
+    - docker build -t hello .
+    - docker run --rm -it hello
+#  only:
+#    - branches
