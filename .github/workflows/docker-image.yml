@@ -2,9 +2,11 @@
 on: [push, pull_request]
 name: Docker images builld and run
 
-steps:
-  - name: docker build
-    image: golang:1.15.6-alpine3.12
-    commands:
-    - docker build -t hello .
-    - docker run --rm -it hello
+jobs:
+
+  steps:
+    - name: docker build
+      image: golang:1.15.6-alpine3.12
+      commands:
+      - docker build -t hello .
+      - docker run --rm -it hello
