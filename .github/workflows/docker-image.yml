@@ -9,5 +9,7 @@ jobs:
   Hello:
     runs-on: ubuntu-18.04
     steps:
-    - name: Hello World!
-      run: echo "Hello World"
+    - name: Docker build
+      run: docker build -t hello .
+    - name: Dokcer run 
+      run: docker run --rm  -it hello
