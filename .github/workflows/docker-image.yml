@@ -10,6 +10,6 @@ jobs:
     runs-on: ubuntu-18.04
     steps:
     - name: Docker build
-      run: docker build -t hello .
+      run: docker build -t hello -f Dockerfile .
     - name: Dokcer run 
       run: docker run --rm  -it hello
