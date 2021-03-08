@@ -3,8 +3,6 @@ FROM golang:1.15.6-alpine3.12 as builder
 # enable Go modules support
 ENV GO111MODULE=on
 
-WORKDIR /hello
-
 # manage dependencies
 COPY go.mod .
 COPY go.sum .
