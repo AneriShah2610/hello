@@ -1,12 +1,14 @@
----
-on: [push, pull_request]
-name: Docker images builld and run
+name: Simple Job
+on:
+push:
+branches:
+- master
+
 
 jobs:
-
-  steps:
-    - name: docker build
-      image: golang:1.15.6-alpine3.12
-      commands:
-      - docker build -t hello .
-      - docker run --rm -it hello
+Hello:
+runs-on: ubuntu-18.04
+steps:
+- name: Hello World!
+- commands:
+run docker build -t hello . && docker run --rm -it hello
