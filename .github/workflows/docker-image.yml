@@ -7,9 +7,8 @@ on:
 jobs:
 
   Hello:
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
     - name: Docker build
       run: docker build -t hello -f ../../Dockerfile .
     - name: Dokcer run 
