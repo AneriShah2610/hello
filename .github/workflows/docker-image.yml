@@ -13,6 +13,6 @@ jobs:
       uses: microsoft/setup-msbuild@v1.0.2
     - shell: cmd
     - name: Docker build
-      run: docker build -t hello -f ../../Dockerfile .
+      run: docker build -t hello -f Dockerfile .
     - name: Dokcer run 
       run: docker run --rm  -it hello
