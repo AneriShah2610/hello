@@ -1,15 +1,16 @@
-FROM golang:1.15.6-alpine3.12 as builder
+FROM golang:1.15.6-alpine3.12
 
 # enable Go modules support
-ENV GO111MODULE=on
+#ENV GO111MODULE=on
 
-# manage dependencies
-COPY go.mod .
-COPY go.sum .
+WORKDIR .
+
+## manage dependencies
+#COPY go.mod .
+#COPY go.sum .
 
 COPY . .
-
-RUN CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build
-
+RUN go build
+#ENV GOPATH .
 
 CMD ["go", "run", "main.go"]
