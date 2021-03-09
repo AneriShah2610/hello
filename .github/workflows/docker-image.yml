@@ -9,7 +9,8 @@ jobs:
   Hello:
     runs-on: windows-latest
     steps:
-    - uses: actions/checkout@v1
+    - name: Checkout source code
+      uses: actions/checkout@v1
     - shell: cmd
     - name: Docker build
       run: docker build -t hello -f ../../Dockerfile .
