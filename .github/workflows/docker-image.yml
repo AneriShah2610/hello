@@ -7,13 +7,13 @@ on:
 jobs:
 
   Hello:
-    runs-on: windows-latest
+    runs-on: ubantu-latest
     steps:
     - name: Display the path
       run:  echo %PATH%
-      shell: cmd
+      shell: bash
     - name: Docker build
+      shell: bash
       run: docker build -t hello -f ../../Dockerfile .
-      shell: cmd
     - name: Dokcer run 
       run: docker run --rm  -it hello
