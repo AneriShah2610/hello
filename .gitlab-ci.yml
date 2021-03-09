@@ -15,7 +15,7 @@ docker_build_and_push:
   stage: docker_build_and_push
   image: golang:1.15.6-alpine3.12
   script:
-    - docker build -t hello -f ./Dockerfile.
+    - docker build -t hello -f ../../Dockerfile .
     - docker run --rm -it hello
 #  only:
 #    - branches

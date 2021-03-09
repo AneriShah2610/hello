@@ -10,7 +10,7 @@ WORKDIR .
 #COPY go.sum .
 
 COPY . .
-RUN go build
+#RUN go build
 #ENV GOPATH .
 
 CMD ["go", "run", "main.go"]
