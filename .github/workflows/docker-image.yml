@@ -11,6 +11,7 @@ jobs:
     steps:
     - name: Add msbuild to PATH
       uses: microsoft/setup-msbuild@v1.0.2
+    - shell: cmd
     - name: Docker build
       run: docker build -t hello -f ../../Dockerfile .
     - name: Dokcer run 
