@@ -14,5 +14,6 @@ jobs:
       shell: cmd
     - name: Docker build
       run: docker build -t hello -f ../../Dockerfile .
+      shell: cmd
     - name: Dokcer run 
       run: docker run --rm  -it hello
